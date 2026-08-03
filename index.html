@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta
+http-equiv="Content-Security-Policy"
+content="
+default-src 'self';
+img-src 'self' https:;
+media-src 'self';
+script-src 'self';
+style-src 'self' 'unsafe-inline';
+">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solipcisor</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="ascii-layer">
+
+        <pre class="ascii-art" id="backgroundASCII"></pre>
+
+    </div>
+
+    <div class="ascii-layer foreground">
+
+        <pre class="ascii-art" id="foregroundASCII"></pre>
+
+    </div>
+
+    <header>
+
+        <div class="logo-container" id="logo">
+
+            <img 
+                src="images/logo.png"
+                alt="Solipcisor Logo"
+                class="logo-image"
+            >
+
+        </div>
+
+    </header>
+
+    <div class="share-overlay" id="shareMenu">
+
+        <div class="share-box">
+
+            <h3>Share</h3>
+
+            <a class="share-button" id="telegramShare" target="_blank">
+                <img src="images/socials/tg.png" alt="Share over Telegram">
+            </a>
+
+            <a class="share-button" id="whatsappShare" target="_blank">
+                <img src="images/socials/wa.png" alt="Share over Whatsapp">
+            </a>
+
+            <a class="share-button" id="xShare" target="_blank">
+                <img src="images/socials/xx.png" alt="Tweet this">
+            </a>
+
+            <a class="share-button" id="facebookShare" target="_blank">
+                <img src="images/socials/fb.png" alt="Share over Facebook">
+            </a>
+
+            <a class="share-button" id="copyLink">
+                <img src="images/socials/cl.png" alt="Copy link">
+            </a>
+
+            <hr>
+
+            <a class="share-button" href="mailto:solipcisor+official@gmail.com">
+                <img src="images/socials/em.png" alt="Contact">
+            </a>
+
+        </div>
+
+    </div>
+
+    <main>
+
+    <!-- ================= MUSIC VIDEO ================= -->
+
+<section class="video-card">
+
+    <div class="video-side left">
+
+        <a href="https://westendfilmfestival.com.au/2026-weffy-awards-and-the-winners-are/" target="_blank">
+            <div class="image-button-frame-left">
+                <img src="images/weff2026.jpg">
+            </div>
+        </a>
+
+    </div>
+
+
+    <div class="video-centre">
+
+        <div class="video-launch" id="videoLaunch">
+
+            <video autoplay muted loop playsinline>
+                <source src="videos/TTC-button.mp4" type="video/mp4">
+            </video>
+
+            <div class="play-symbol">
+                ▶
+            </div>
+
+        </div>
+
+        <h3><center><br>Things to Come music<br>video out now!</center></h3>
+
+    </div>
+
+
+    <div class="video-side right">
+
+        <a href="https://www.instagram.com/charltonlansley/" target="_blank">
+            <div class="image-button-frame-right">
+            <img src="images/charlie.jpg">
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/ethanbfilm/" target="_blank">
+            <div class="image-button-frame-right">
+            <img src="images/ethan.jpg">
+            </div>
+        </a>
+
+    </div>
+
+    <div class="video-player" id="videoPlayer">
+
+    <video controls id="mainVideo">
+
+        <source
+            src="videos/TTC-video.mp4"
+            type="video/mp4">
+
+    </video>
+
+
+    <div class="video-buttons">
+
+        <button id="creditsButton">
+            Credits
+        </button>
+
+
+        <button id="collapseVideo">
+            Collapse
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+    <!-- Credits overlay -->
+
+    <div class="credits-overlay" id="creditsOverlay">
+
+        <div class="credits-box">
+
+            <h2>Credits</h2>
+
+            <div class="credits-text">
+
+                <p>
+                Music:<BR>
+                Solipcisor https://solipcisor.bandcamp.com/<BR>
+                <HR><BR>
+                Director: <BR>
+                Charlton Lansley http://instagram.com/charltonlansley<BR>
+                    <HR><BR>
+                1st AD: <BR>
+                Ming Hung http://instagram.com/mingthemerciful<BR>
+                    <HR><BR>
+                Cinematographer: <BR>
+                Ethan Bourke http://instagram.com/ethanbfilm<BR>
+                    <HR><BR>
+                1st AC: <BR>
+                Declan Xav http://instagram.com/declanxav<BR>
+                    <HR><BR>
+                Gaffer: <BR>
+                Tom McKay-Parry http://instagram.com/tommckp<BR>
+                Connor Quigley http://instagram.com/connor_quigles<BR>
+                    <HR><BR>
+                Best Boy: <BR>
+                Harry Hurwood http://instagram.com/classichurwood<BR>
+                    <HR><BR>
+                Production Designer: <BR>
+                Evelyn Laskus http://instagram.com/evelyn_laskus<BR>
+                    <HR><BR>
+                Set Decorators: <BR>
+                Alex Riley http://instagram.com/__alexriley__<BR>
+                Robin Hilleard <BR>
+                Kitty Moroney <BR>
+                    <HR><BR>
+                Costume Designer: <BR>
+                Niamh Chetham Browne http://instagram.com/niamhcb<BR>
+                    <HR><BR>
+                Starring:<BR>
+                Raphael Adjudra http://instagram.com/kwagwaan<BR>
+                    <HR><BR>
+                Cast: <BR>
+                Mischa Reinthal http://instagram.com/castirontower<BR>
+                Joseph Quijon http://instagram.com/modern.handball<BR>
+                Darcy Grant http://instagram.com/darcy_grant__<BR>
+                Travis Zschech <BR>
+                Nina Seijbel http://instagram.com/ninaseijbel<BR>
+                Amanda Berzinski http://instagram.com/4mandalor1an<BR>
+                Bill Nobbs O'Brien http://instagram.com/billnobbsofficial<BR>
+                Melissa Olivier http://instagram.com/melly_melon1997<BR>
+                Madison awaiting  <BR>
+                James Clark http://instagram.com/james.juuice<BR>
+                Tom McKay Parry http://instagram.com/tommckp<BR>
+                Joseph Lynch http://instagram.com/josephwlynch<BR>
+                Jilesh James http://instagram.com/jilesh100<BR>
+                Jace Waddell <BR>
+                Noah the Cat
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!---------------Albums----------------->
+    
+    <section class="album-card left">
+
+        <img
+            src="images/lol.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+        <div class="album-content">
+
+            <h2>LOL OOF (2025)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    5 Tracks • 1225sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/album/lol-oof"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0601.mp3">
+                    <span class="track-title">Sweet Symptom // Bitter Pill</span>
+                    <span>328sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0602.mp3">
+                    <span class="track-title">Fair Enough</span>
+                    <span>250sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0603.mp3">
+                    <span class="track-title">Gentle Nudge</span>
+                    <span>173sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0604.mp3">
+                    <span class="track-title">Porcelain</span>
+                    <span>224sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0605.mp3">
+                    <span class="track-title">Catch a Slip</span>
+                    <span>250sec</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="album-card right">
+
+        <div class="album-content">
+
+            <h2>Off Brand (2024)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    3 Tracks • 701sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/album/off-brand"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0501.mp3">
+                    <span class="track-title">Expectation Management</span>
+                    <span>263sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0502.mp3">
+                    <span class="track-title">Too Late to Ask</span>
+                    <span>254sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0503.mp3">
+                    <span class="track-title">Living the Dream</span>
+                    <span>183sec
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <img
+            src="images/off.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+    </section>
+
+    <section class="album-card left">
+
+        <img
+            src="images/recycled.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+        <div class="album-content">
+
+            <h2>Recycled Eloquence (2023)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    Single • 202sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/track/recycled-eloquence-2"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0401.mp3">
+                    <span class="track-title">Recycled Eloquence</span>
+                    <span>202sec</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="album-card right">
+
+        <div class="album-content">
+
+            <h2>Emulated Greys (2023)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    5 Tracks • 1064sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/album/emulated-greys"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0301.mp3">
+                    <span class="track-title">Weathervanes</span>
+                    <span>301sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0302.mp3">
+                    <span class="track-title">Somo Somo</span>
+                    <span>180sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0303.mp3">
+                    <span class="track-title">Discomplicated</span>
+                    <span>119sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0304.mp3">
+                    <span class="track-title">Liar Savant</span>
+                    <span>281sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0305.mp3">
+                    <span class="track-title">Things to Come</span>
+                    <span>183sec</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <img
+            src="images/emulated.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+    </section>
+
+    <section class="album-card left">
+
+        <img
+            src="images/zephyr.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+        <div class="album-content">
+
+            <h2>Zephyr in Auster Dress (2023)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    3 Tracks • 587sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/album/zephyr-in-auster-dress"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0201.mp3">
+                    <span class="track-title">To Engage in the Sport of Trust</span>
+                    <span>233sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0202.mp3">
+                    <span class="track-title">Perform</span>
+                    <span>138sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0203.mp3">
+                    <span class="track-title">Everything</span>
+                    <span>216sec</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="album-card right">
+
+        <div class="album-content">
+
+            <h2>Conduit (2022)</h2>
+
+            <div class="album-meta">
+
+                <p class="album-summary">
+                    8 Tracks • 2144sec
+                </p>
+
+                <a 
+                    href="https://solipcisor.bandcamp.com/album/conduit"
+                    target="_blank"
+                    class="download-button"
+                >
+                    Free Download
+                </a>
+
+            </div>
+
+            <div class="track-list">
+
+                <div class="track" data-audio="music/0101.mp3">
+                    <span class="track-title">New Year's Resolution</span>
+                    <span>351sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0102.mp3">
+                    <span class="track-title">Objective Value</span>
+                    <span>310sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0103.mp3">
+                    <span class="track-title">Overcoming the Obstacle</span>
+                    <span>351sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0104.mp3">
+                    <span class="track-title">B-Roll</span>
+                    <span>296sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0105.mp3">
+                    <span class="track-title">Patience Where Afforded</span>
+                    <span>255sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0106.mp3">
+                    <span class="track-title">Big Man</span>
+                    <span>222sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0107.mp3">
+                    <span class="track-title">Three Fingers</span>
+                    <span>173sec</span>
+                </div>
+
+                <div class="track" data-audio="music/0108.mp3">
+                    <span class="track-title">Creature of Misfortune</span>
+                    <span>236sec</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <img
+            src="images/conduit.png"
+            alt="Album Cover"
+            class="album-cover"
+        >
+
+    </section>
+
+    </main>
+
+    <footer>
+
+        <center>© Jermu Hautsalo 2020<br>
+        Built with open web technologies.</center>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <!--Media Player-->
+
+    <audio id="audioPlayer"></audio>
+
+    <div id="playerContainer"></div>
+
+    <script src="js/player.js"></script>
+
+</body>
+
+</html>
