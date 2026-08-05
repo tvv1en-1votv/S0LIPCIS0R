@@ -461,19 +461,19 @@ footer::before{
     display:grid;
 
     grid-template-columns:
-        1fr 2fr 1fr;
+        1fr
+        2fr
+        1fr;
 
     align-items:center;
 
-    gap:30px;
+    gap:clamp(10px, 2vw, 30px);
 
-    width:95%;
-
-    max-width:1200px;
+    width:100%;
 
     margin:50px auto;
 
-    padding:30px;
+    padding:20px;
 
     background:
         rgba(10,10,20,.55);
@@ -565,26 +565,6 @@ footer::before{
 
 }
 
-
-@media(max-width:800px){
-
-    .video-card {
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .video-side {
-
-        flex-direction:row;
-
-        justify-content:center;
-
-    }
-
-}
-
 .image-button {
 
     display:block;
@@ -597,9 +577,9 @@ footer::before{
 
 .image-button-frame-left {
 
-    width:180px;
-
-    height:380px;
+    width:clamp(90px,18vw,180px);
+    aspect-ratio:180 / 380;
+    height:auto;
 
     overflow:hidden;
 
@@ -669,9 +649,9 @@ footer::before{
 
 .image-button-frame-right {
 
-    width:180px;
-
-    height:180px;
+    width:clamp(90px,18vw,180px);
+    aspect-ratio:1;
+    height:auto;
 
     overflow:hidden;
 
@@ -702,8 +682,8 @@ footer::before{
     object-fit:contain;
 
     transition:
-        transform .4s ease,
-        filter .4s ease;
+        transform 1s ease,
+        filter 1s ease;
 
 }
 
@@ -723,7 +703,7 @@ footer::before{
 
     position: relative;
 
-    width:min(900px,100%);
+    width:clamp(180px,36vw,360px);
 
     margin:auto;
 
@@ -740,7 +720,7 @@ footer::before{
 
 .video-launch video {
 
-    width: 100%;
+    width:clamp(180px,36vw,360px);
 
     display: block;
 
@@ -954,8 +934,6 @@ footer::before{
 
 }
 
-/* Album Cards */
-
 /* ================= ALBUM CARDS ================= */
 
 
@@ -967,7 +945,7 @@ footer::before{
 
     max-width: 1200px;
 
-    width: 95%;
+    width: min(95%,1200px);
 
     margin: 40px auto;
 
@@ -983,39 +961,41 @@ footer::before{
 
     box-shadow: 0 10px 30px rgba(0,0,0,.35);
 
-    height: 320px;
+    min-height:260px;
+
+    max-height:320px;
 
 }
 
-
-/* Artwork left */
 
 .album-card.left {
-
-    grid-template-columns: 320px 1fr;
-
+    grid-template-columns: minmax(180px, 32%) 1fr;
 }
 
-
-/* Artwork right */
-
 .album-card.right {
-
-    grid-template-columns: 1fr 320px;
-
+    grid-template-columns: 1fr minmax(180px, 32%);
 }
 
 
 
 /* Album artwork */
 
-.album-cover {
+.album-cover{
 
-    width: 320px;
+    width:100%;
+    height:100%;
 
-    height: 320px;
+    display:block;
 
-    object-fit: cover;
+    object-fit:contain;
+
+    transition:
+        transform .15s ease-out,
+        filter .4s ease;
+
+    transform-origin:center;
+
+    will-change:transform;
 
 }
 
@@ -1023,18 +1003,16 @@ footer::before{
 
 /* Text area */
 
-.album-content {
+.album-content{
 
-    padding: 30px;
+    display:flex;
+    flex-direction:column;
 
-    display: flex;
+    padding:20px;
 
-    flex-direction: column;
+    min-height:0;
 
-    min-width: 0;
-
-    height: 320px;
-
+    overflow:hidden;
 }
 
 
@@ -1042,7 +1020,7 @@ footer::before{
 
     margin-bottom: 10px;
 
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 2vw, 2rem);
 
 }
 
@@ -1096,9 +1074,11 @@ footer::before{
 
     flex: 1;
 
-    overflow-y: auto;
+    overflow-y:auto;
 
     min-height: 0;
+
+    max-height: 130px;
 
     border-top: 1px solid rgba(255,255,255,.15);
 
@@ -1165,32 +1145,6 @@ footer::before{
     opacity: .6;
 
     font-family: monospace;
-
-}
-
-
-
-/* Mobile */
-
-@media (max-width:800px) {
-
-
-    .album-card,
-    .album-card.left,
-    .album-card.right {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .album-cover {
-
-        width: 100%;
-
-        height: auto;
-
-    }
 
 }
 
@@ -1447,26 +1401,6 @@ footer::before{
 
 }
 
-.album-cover {
-
-    transition:
-        transform .4s ease,
-        filter .4s ease;
-    
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transform-origin:center;
-
-    transition:
-        transform .15s ease-out;
-
-    will-change:transform;
-}
-
-
 .album-cover:hover {
 
     transform:
@@ -1504,31 +1438,17 @@ footer::before{
 
     }
 
-
-    .album-cover {
-
-        width:100%;
-
-        height:auto;
-
-        aspect-ratio:1 / 1;
-
-    }
-
-
     .album-content {
 
         padding:20px;
 
     }
 
-
     .album-content h2 {
 
         font-size:1.5rem;
 
     }
-
 
     /* Track list */
 
@@ -1610,115 +1530,74 @@ footer::before{
 
 }
 
-/* ================= ASCII BACKGROUND ================= */
-
-
-#backgroundASCII,
+/* ================= ASCII BACKGROUND ================= */ 
+#backgroundASCII, 
 #foregroundASCII {
-
-    position:fixed;
-
-    top:0;
-    left:0;
-
-    white-space:pre;
-
-    font-family:monospace;
-
-    line-height:1;
-
-    pointer-events:none;
-
-    user-select:none;
-
+    position:fixed; 
+    top:0; 
+    left:0; 
+    white-space:pre; 
+    font-family:monospace; 
+    line-height:1; 
+    pointer-events:none; 
+    user-select:none; 
     overflow:hidden;
-
-}
+} 
 
 @keyframes drift {
-
     from {
-
         transform:
         translate(-50%, -50%)
         translateY(0)
         scale(.35);
-
     }
-
     to {
-
-        transform:
-        translate(-50%, -50%)
-        translateY(-500px)
-        scale(.35);
-
+        transform: translate(-50%, -50%)
+        translateY(-500px) scale(.35);
     }
-
 }
 
 /* Distant layer */
-
 #backgroundASCII {
-
     opacity:0.66;
-
-    transform:
-        translate(15%, 14%)
-        scale(130%, 130%);
-
-    filter:
-        blur(0.5px);
-
+    transform: translate(15%, 14%)
+    scale(130%, 130%);
+    filter: blur(0.5px);
     color: rgb(255, 124, 63);
-
     mix-blend-mode: color-burn;
-
 }
 
-
 /* Foreground layer */
-
 #foregroundASCII {
-
     opacity:0.4;
-
     transform:
         translate(25%, 25%)
         scale(1.5);
-
     color: #1a173f;
-    mix-blend-mode: color-burn;
-
-    filter: blur(0.5px);
+    mix-blend-mode:
+    color-burn;
+    filter:
+        blur(0.5px);
 }
-
-
 .ascii-layer {
     position: fixed;
     inset: 0;
-
     overflow: hidden;
-
     pointer-events: none;
+    width: 100vw;
 }
-
 .ascii-art {
     position: fixed;
+    width: 100vw;
     top: 0;
     left: 0;
-
     margin: 0;
     padding: 0;
-
-    white-space: pre;
-    font-family: monospace;
+    white-space:pre;
+    font-family:monospace;
     font-size: 8px;
     line-height: 8px;
-
     color: white;
-
     opacity: 1;
-
     transform: none;
 }

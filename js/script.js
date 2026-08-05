@@ -214,11 +214,11 @@ document.querySelectorAll(".album-cover").forEach(img => {
         const x = (e.clientX - rect.left) / rect.width;
         const y = (e.clientY - rect.top) / rect.height;
 
-        const moveX = (x - 0.5) * 130;
-        const moveY = (y - 0.5) * 130;
+        const moveX = (x-0.5) * 120;
+        const moveY = (y-0.5) * 120;
 
         img.style.transform =
-            `scale(1.7) translate(${-moveX}px, ${-moveY}px)`;
+            `scale(1.725) translate(${-moveX}px, ${-moveY}px)`;
 
     });
 
